@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cbr00fttdrk8g"]
+
+[ext_resource type="Script" uid="uid://b4rpjlks2tn2t" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://diq7bt765lfxn" path="res://assets/space_background.png" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://qsy2o5mu1aw5" path="res://player/player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bqsmu0afa6rv" path="res://rock/rock.tscn" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cwcijeqcixmvy" path="res://enemy/enemy.tscn" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://drvuif8iygjou" path="res://hud/hud.tscn" id="5_lquwl"]
+[ext_resource type="AudioStream" uid="uid://bmyyfvou1jeit" path="res://assets/sounds/explosion.wav" id="7_kek77"]
+[ext_resource type="AudioStream" uid="uid://b2nqgjxt4m1r6" path="res://assets/sounds/levelup.ogg" id="8_4c57u"]
+[ext_resource type="AudioStream" uid="uid://c3ro6aymcbf0x" path="res://assets/sounds/Funky-Gameplay_Looping.ogg" id="9_efxa6"]
+
+[sub_resource type="Curve2D" id="Curve2D_0xm2m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -8, 0, 0, 0, 0, 1920, 0, 0, 0, 0, 0, 1920, 1080, 0, 0, 0, 0, 0, 1080, 0, 0, 0, 0, 0, -8)
+}
+point_count = 5
+
+[node name="Main" type="Node" unique_id=1061495672]
+process_mode = 3
+script = ExtResource("1_h2yge")
+rock_scene = ExtResource("2_1bvp3")
+enemy_scene = ExtResource("3_7mycd")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1265307206]
+texture = ExtResource("1_ig7tw")
+centered = false
+
+[node name="Player" parent="." unique_id=1555204957 instance=ExtResource("2_0xm2m")]
+position = Vector2(576, 324)
+
+[node name="RockPath" type="Path2D" parent="." unique_id=1168901595]
+curve = SubResource("Curve2D_0xm2m")
+
+[node name="RockSpawn" type="PathFollow2D" parent="RockPath" unique_id=544366194]
+position = Vector2(0, -8)
+rotation = 0.004166643
+
+[node name="HUD" parent="." unique_id=938507297 instance=ExtResource("5_lquwl")]
+
+[node name="EnemyTimer" type="Timer" parent="." unique_id=1968138650]
+one_shot = true
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="." unique_id=1482105340]
+stream = ExtResource("7_kek77")
+
+[node name="LevelupSound" type="AudioStreamPlayer" parent="." unique_id=1499148312]
+stream = ExtResource("8_4c57u")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1365664122]
+stream = ExtResource("9_efxa6")
+
+[connection signal="dead" from="Player" to="." method="game_over"]
+[connection signal="lives_changed" from="Player" to="HUD" method="update_lives"]
+[connection signal="shield_changed" from="Player" to="HUD" method="update_shield"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
+
+[editable path="Player"]
+[editable path="HUD"]

@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://bbttvmfn6l6iu"]
+
+[ext_resource type="Script" uid="uid://c5wryjvvtyyib" path="res://menu/menu.gd" id="1_6nwqt"]
+[ext_resource type="Texture2D" uid="uid://diq7bt765lfxn" path="res://assets/space_background.png" id="1_j0t7f"]
+[ext_resource type="FontFile" uid="uid://cyta3lc2c6ve0" path="res://assets/kenvector_future_thin.ttf" id="2_g18jx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g18jx"]
+bg_color = Color(0.0627451, 0.14117648, 0.2627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.28235295, 0.8117647, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6nwqt"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1254902, 0.36078432, 0.52156866, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.5019608, 0.9098039, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbjm4"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.0627451, 0.14117648, 0.2627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.28235295, 0.8117647, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Menu" type="Control" unique_id=432256289]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6nwqt")
+
+[node name="Background" type="TextureRect" parent="." unique_id=24460348]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_j0t7f")
+
+[node name="TitleLabel" type="Label" parent="Background" unique_id=332994271]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 384.0
+offset_top = 256.0
+offset_right = -384.0
+offset_bottom = 346.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_g18jx")
+theme_override_font_sizes/font_size = 80
+text = "SPACE ROCKS"
+horizontal_alignment = 1
+
+[node name="MenuButtons" type="VBoxContainer" parent="Background" unique_id=1174878776]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="PlayButton" type="Button" parent="Background/MenuButtons" unique_id=531001852]
+custom_minimum_size = Vector2(350, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g18jx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_g18jx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6nwqt")
+text = "PLAY"
+
+[node name="ControlsButton" type="Button" parent="Background/MenuButtons" unique_id=526731260]
+custom_minimum_size = Vector2(350, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g18jx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_g18jx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6nwqt")
+text = "CONTROLS
+"
+
+[node name="ExitButton" type="Button" parent="Background/MenuButtons" unique_id=1499203821]
+custom_minimum_size = Vector2(350, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g18jx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_g18jx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6nwqt")
+text = "EXIT
+"
+
+[node name="ControlsPanel" type="PanelContainer" parent="." unique_id=1173496947]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -175.0
+offset_right = 250.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pbjm4")
+
+[node name="Content" type="VBoxContainer" parent="ControlsPanel" unique_id=1366661119]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="ControlsLabel" type="Label" parent="ControlsPanel/Content" unique_id=1585775997]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_g18jx")
+theme_override_font_sizes/font_size = 24
+text = "CONTROLS
+
+W - Accelerate
+A / D - Rotate
+SPACE - Shoot
+P - Pause"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="ControlsPanel/Content" unique_id=1720462592]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g18jx")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_g18jx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6nwqt")
+text = "BACK"
+
+[connection signal="pressed" from="Background/MenuButtons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Background/MenuButtons/ControlsButton" to="." method="_on_controls_button_pressed"]
+[connection signal="pressed" from="Background/MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="ControlsPanel/Content/BackButton" to="." method="_on_back_button_pressed"]

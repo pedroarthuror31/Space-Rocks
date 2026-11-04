@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://qsy2o5mu1aw5"]
+
+[ext_resource type="Script" uid="uid://cxernfeah7tdo" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://de1ggvl3sbms0" path="res://assets/player_ship.png" id="2_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://db3otv5j2cbxb" path="res://bullet/bullet.tscn" id="2_yw30f"]
+[ext_resource type="PackedScene" uid="uid://bj6jrwvxes5xk" path="res://explosion/explosion.tscn" id="4_yw30f"]
+[ext_resource type="AudioStream" uid="uid://c2xm1bi2qius" path="res://assets/sounds/laser.ogg" id="5_g6k8r"]
+[ext_resource type="AudioStream" uid="uid://cojha1utsav13" path="res://assets/sounds/engine.ogg" id="6_boad6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_linsa"]
+radius = 30.016663
+
+[sub_resource type="Curve" id="Curve_g6k8r"]
+_data = [Vector2(0.016949154, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.026548743), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_boad6"]
+colors = PackedColorArray(1, 0.6666667, 0, 1, 0.6, 0, 0, 1)
+
+[node name="Player" type="RigidBody2D" unique_id=1555204957]
+contact_monitor = true
+max_contacts_reported = 1
+linear_damp = 1.0
+angular_damp = 5.0
+script = ExtResource("1_rkbax")
+bullet_scene = ExtResource("2_yw30f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=652309607]
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_g1dw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1172876627]
+shape = SubResource("CircleShape2D_linsa")
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=500398703]
+position = Vector2(50, 0)
+
+[node name="GunCooldown" type="Timer" parent="." unique_id=776940191]
+one_shot = true
+autostart = true
+
+[node name="Explosion" parent="." unique_id=369326042 instance=ExtResource("4_yw30f")]
+visible = false
+
+[node name="InvulnerabilityTimer" type="Timer" parent="." unique_id=256018539]
+wait_time = 2.0
+one_shot = true
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="." unique_id=1836773726]
+stream = ExtResource("5_g6k8r")
+volume_db = 1.0
+
+[node name="EngineSound" type="AudioStreamPlayer2D" parent="." unique_id=1952573702]
+stream = ExtResource("6_boad6")
+
+[node name="Exhaust" type="CPUParticles2D" parent="." unique_id=1996379811]
+show_behind_parent = true
+position = Vector2(-28, 0)
+rotation = 3.1415927
+amount = 25
+lifetime = 0.09999999999999999
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(1, 5)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 400.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_g6k8r")
+color_ramp = SubResource("Gradient_boad6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="GunCooldown" to="." method="_on_gun_cooldown_timer_timeout"]
+[connection signal="timeout" from="InvulnerabilityTimer" to="." method="_on_invulnerability_timer_timeout"]
