@@ -6,12 +6,6 @@ Players control a spaceship and must survive the dangers of space by facing aste
 
 The project was created as part of my game development learning journey, exploring programming concepts, 2D physics, user interfaces, visual effects, and scene management.
 
-## Play Online
-
-You can play **Space Rocks** directly in your browser without downloading or installing anything.
-
-**[Play Space Rocks](https://pedroarthuror31.github.io/Space-Rocks/)**
-
 ## About the Game
 
 Inspired by classic space arcade games, Space Rocks offers an action-packed experience in which players must avoid obstacles, fight enemies, and survive increasingly challenging encounters.
@@ -22,12 +16,10 @@ As players progress, new challenges are introduced through the game's level prog
 
 ## Features
 
-The game includes the following features:
-
 - **Space Movement:** Spaceship acceleration and rotation mechanics.
 - **Shooting System:** Projectile creation and movement.
 - **Asteroids:** Space obstacles that pose a threat to the player.
-- **Enemy Spacecraft:** Hostile ships that increase the difficulty of each session.
+- **Enemy Spacecraft:** Hostile ships that increase gameplay difficulty.
 - **Health System:** Management of the spaceship's health points.
 - **Shield System:** Defensive mechanics that help players survive.
 - **Level Progression:** Management of levels and increasing challenges.
@@ -38,13 +30,19 @@ The game includes the following features:
 - **Main Menu:** Options to start the game, view controls, and exit.
 - **Controls Screen:** Dedicated screen displaying the game's keyboard controls.
 
+## Play Online
+
+You can play **Space Rocks** directly in your browser without downloading or installing anything.
+
+**[Play Space Rocks](https://pedroarthuror31.github.io/Space-Rocks/)**
+
 ## Controls
 
 | Key | Action |
 |---|---|
-| `W` | Accelerate the spaceship |
-| `A` | Rotate left |
-| `D` | Rotate right |
+| `W` or `↑` | Accelerate the spaceship |
+| `A` or `←` | Rotate left |
+| `D` or `→` | Rotate right |
 | `Space` | Shoot |
 | `P` | Pause / Resume |
 
@@ -52,7 +50,7 @@ The game includes the following features:
 
 1. Launch the game and select **PLAY** from the main menu.
 2. Start the game from the gameplay interface.
-3. Use `W` to accelerate and `A` / `D` to control the spaceship's direction.
+3. Use `W`, `A`, and `D`, or the arrow keys, to control the spaceship.
 4. Press `Space` to shoot at enemies.
 5. Avoid asteroids and incoming enemy attacks.
 6. Use movement and available defensive mechanics to survive.
