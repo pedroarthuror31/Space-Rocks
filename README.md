@@ -6,6 +6,12 @@ Players control a spaceship and must survive the dangers of space by facing aste
 
 The project was created as part of my game development learning journey, exploring programming concepts, 2D physics, user interfaces, visual effects, and scene management.
 
+## Play Online
+
+You can play **Space Rocks** directly in your browser without downloading or installing anything.
+
+**[Play Space Rocks](https://pedroarthuror31.github.io/Space-Rocks/)**
+
 ## About the Game
 
 Inspired by classic space arcade games, Space Rocks offers an action-packed experience in which players must avoid obstacles, fight enemies, and survive increasingly challenging encounters.
