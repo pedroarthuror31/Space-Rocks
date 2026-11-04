@@ -1,131 +1,141 @@
 # Space Rocks
 
-**Space Rocks** é um jogo arcade 2D de combate espacial desenvolvido com a **Godot Engine 4** e a linguagem **GDScript**.
+**Space Rocks** is a 2D space shooter arcade game developed using **Godot Engine 4** and **GDScript**.
 
-O jogador controla uma nave espacial e precisa enfrentar asteroides e naves inimigas, utilizando habilidades de movimentação, disparo e defesa para sobreviver.
+Players control a spaceship and must survive the dangers of space by facing asteroids and enemy spacecraft while using movement, shooting, and defensive mechanics.
 
-O projeto foi desenvolvido como parte do aprendizado em desenvolvimento de jogos, explorando conceitos de programação, física 2D, interfaces gráficas, efeitos visuais e gerenciamento de cenas.
+The project was created as part of my game development learning journey, exploring programming concepts, 2D physics, user interfaces, visual effects, and scene management.
 
-## Sobre o jogo
+## About the Game
 
-Inspirado nos clássicos jogos arcade espaciais, Space Rocks oferece uma experiência de ação em que o jogador precisa desviar de obstáculos, enfrentar inimigos e sobreviver aos desafios apresentados durante a partida.
+Inspired by classic space arcade games, Space Rocks offers an action-packed experience in which players must avoid obstacles, fight enemies, and survive increasingly challenging encounters.
 
-A jogabilidade envolve movimentação livre pelo espaço, disparos de projéteis, gerenciamento de vida e utilização de mecanismos defensivos.
+Gameplay revolves around free movement through space, projectile-based combat, health management, and defensive mechanics.
 
-Conforme o jogador avança, novos desafios são apresentados por meio do sistema de progressão.
+As players progress, new challenges are introduced through the game's level progression system.
 
-## Funcionalidades
+## Features
 
-O jogo conta com os seguintes recursos:
+The game includes the following features:
 
-- **Movimentação espacial:** sistema de aceleração e rotação da nave.
-- **Sistema de disparos:** criação e movimentação de projéteis.
-- **Asteroides:** obstáculos espaciais que representam ameaças ao jogador.
-- **Naves inimigas:** adversários que aumentam a dificuldade das partidas.
-- **Sistema de vida:** gerenciamento dos pontos de vida da nave.
-- **Escudo de proteção:** mecanismo defensivo para auxiliar na sobrevivência.
-- **Sistema de progressão:** gerenciamento de níveis e desafios.
-- **Efeitos visuais:** explosões, partículas e efeitos de movimentação.
-- **Efeitos sonoros:** sons de disparos, explosões e outras interações.
-- **Música de fundo:** acompanhamento musical durante a partida.
-- **Interface gráfica (HUD):** apresentação de informações relevantes ao jogador.
-- **Menu principal:** opções para iniciar o jogo, consultar os controles e sair.
-- **Tela de controles:** apresentação dos comandos utilizados durante a partida.
+- **Space Movement:** Spaceship acceleration and rotation mechanics.
+- **Shooting System:** Projectile creation and movement.
+- **Asteroids:** Space obstacles that pose a threat to the player.
+- **Enemy Spacecraft:** Hostile ships that increase the difficulty of each session.
+- **Health System:** Management of the spaceship's health points.
+- **Shield System:** Defensive mechanics that help players survive.
+- **Level Progression:** Management of levels and increasing challenges.
+- **Visual Effects:** Explosions, particles, and movement effects.
+- **Sound Effects:** Audio feedback for shooting, explosions, and other interactions.
+- **Background Music:** Music accompanying gameplay.
+- **Heads-Up Display (HUD):** Interface displaying relevant gameplay information.
+- **Main Menu:** Options to start the game, view controls, and exit.
+- **Controls Screen:** Dedicated screen displaying the game's keyboard controls.
 
-## Controles
+## Controls
 
-| Tecla | Ação |
+| Key | Action |
 |---|---|
-| `W` | Acelerar a nave |
-| `A` | Girar para a esquerda |
-| `D` | Girar para a direita |
-| `Espaço` | Disparar |
-| `P` | Pausar ou continuar a partida |
+| `W` | Accelerate the spaceship |
+| `A` | Rotate left |
+| `D` | Rotate right |
+| `Space` | Shoot |
+| `P` | Pause / Resume |
 
-### Como jogar
+### How to Play
 
-1. Execute o jogo e selecione **PLAY** no menu principal.
-2. Inicie a partida pela interface do jogo.
-3. Utilize `W` para acelerar e `A` e `D` para controlar a direção da nave.
-4. Pressione `Espaço` para disparar contra os inimigos.
-5. Desvie dos asteroides e dos ataques adversários.
-6. Utilize a movimentação e os recursos defensivos disponíveis para sobreviver.
+1. Launch the game and select **PLAY** from the main menu.
+2. Start the game from the gameplay interface.
+3. Use `W` to accelerate and `A` / `D` to control the spaceship's direction.
+4. Press `Space` to shoot at enemies.
+5. Avoid asteroids and incoming enemy attacks.
+6. Use movement and available defensive mechanics to survive.
 
-Os comandos também podem ser consultados na opção **CONTROLS** do menu principal.
+Controls can also be viewed by selecting **CONTROLS** from the main menu.
 
-## Tecnologias utilizadas
+## Technologies Used
 
-| Tecnologia | Utilização |
+| Technology | Purpose |
 |---|---|
-| **Godot Engine 4.7.1** | Motor de desenvolvimento do jogo |
-| **GDScript** | Programação da lógica e das funcionalidades |
-| **Sistema de cenas e nós** | Organização dos componentes do jogo |
-| **Física 2D** | Movimentação, colisões e interações |
-| **Sistema de sinais** | Comunicação entre objetos e eventos |
-| **Sistema de partículas** | Efeitos visuais de movimento e explosões |
-| **Git e GitHub** | Versionamento e compartilhamento do código-fonte |
+| **Godot Engine 4.7.1** | Game development engine |
+| **GDScript** | Game logic and functionality |
+| **Godot Scene and Node System** | Game component organization |
+| **2D Physics** | Movement, collisions, and interactions |
+| **Godot Signals** | Communication between game objects and events |
+| **Particle System** | Visual effects for movement and explosions |
+| **Git and GitHub** | Version control and source code hosting |
 
-## Estrutura do projeto
+## Project Structure
 
 ```text
 Space-Rocks/
-├── assets/         # Imagens, sons, fontes e outros recursos
-├── bullet/         # Projéteis
-├── enemy/          # Inimigos
-├── explosion/      # Efeitos de explosão
-├── hud/            # Interface gráfica
-├── menu/           # Menu principal
-├── player/         # Nave do jogador
-├── rock/           # Asteroides
-├── main.gd         # Lógica principal
-├── main.tscn       # Cena principal da partida
-└── project.godot   # Configuração do projeto
+├── assets/         # Images, audio, fonts, and other resources
+├── bullet/         # Projectiles
+├── enemy/          # Enemy spacecraft
+├── explosion/      # Explosion effects
+├── hud/            # Heads-up display
+├── menu/           # Main menu
+├── player/         # Player spaceship
+├── rock/           # Asteroids
+├── main.gd         # Main game logic
+├── main.tscn       # Main gameplay scene
+└── project.godot   # Godot project configuration
 ```
 
-## Como executar o projeto
+## How to Run the Project
 
-### Requisitos
+### Requirements
 
-- Godot Engine 4.7.1 ou versão compatível.
-- Computador capaz de executar projetos 2D desenvolvidos na Godot.
+- Godot Engine 4.7.1 or a compatible version.
+- A computer capable of running 2D Godot projects.
 
-### 1. Baixar o projeto
+### 1. Download the Project
 
-Na página do repositório, clique em **Code → Download ZIP** e extraia os arquivos.
+On the repository page, click **Code → Download ZIP** and extract the downloaded files.
 
-Alternativamente, clone o repositório utilizando o Git:
+Alternatively, clone the repository using Git:
 
 ```bash
 git clone https://github.com/pedroarthuror31/Space-Rocks.git
 ```
 
-### 2. Importar o projeto na Godot
+### 2. Import into Godot
 
-1. Abra o gerenciador de projetos da Godot.
-2. Clique em **Importar**.
-3. Localize a pasta do projeto.
-4. Selecione o arquivo `project.godot`.
-5. Confirme a importação e abra o projeto.
+1. Open the Godot Project Manager.
+2. Click **Import**.
+3. Navigate to the downloaded project folder.
+4. Select the `project.godot` file.
+5. Confirm the import and open the project.
 
-### 3. Executar o jogo
+### 3. Run the Game
 
-Com o projeto aberto na Godot, pressione `F5` para executar a cena principal configurada.
+With the project open in Godot, press `F5` to run the configured main scene.
 
-O jogo deverá iniciar pelo menu principal, permitindo acessar as opções **PLAY**, **CONTROLS** e **EXIT**.
+The game should launch into the main menu, where players can select **PLAY**, **CONTROLS**, or **EXIT**.
 
-## Desenvolvimento e aprendizado
+## Development and Learning
 
-O projeto foi desenvolvido com base nos estudos do livro *Godot 4 Game Development Projects — Second Edition*, com implementações e personalizações adicionais.
+This project was developed based on the book *Godot 4 Game Development Projects — Second Edition*, with additional implementations and customizations.
 
-Durante o desenvolvimento, foram trabalhados conceitos como:
+Throughout development, I explored several game development concepts, including:
 
-- Programação orientada a eventos.
-- Organização de projetos por cenas e nós.
-- Movimentação e física em jogos 2D.
-- Detecção e tratamento de colisões.
-- Instanciação e gerenciamento de objetos.
-- Utilização de sinais para comunicação entre componentes.
-- Desenvolvimento de interfaces gráficas.
-- Integração de recursos gráficos e sonoros.
+- Event-driven programming.
+- Scene and node-based project organization.
+- Movement and physics in 2D games.
+- Collision detection and handling.
+- Object instantiation and management.
+- Signal-based communication between components.
+- User interface development.
+- Integration of graphical and audio resources.
 
-Além das funcionalidades do jogo, foram desenvolvidas personalizações na interface, incluindo um menu principal com identidade visual espacial.
+In addition to the core gameplay features, I implemented interface customizations, including a main menu with a space-themed visual design.
+
+## Future Improvements
+
+**Space Rocks** is an ongoing learning project, and I plan to continue improving and expanding it over time as I gain more experience with Godot and game development.
+
+Future updates may include new gameplay features, refinements to existing mechanics, improvements to visual and audio effects, and enhancements to the overall player experience.
+
+I intend to keep experimenting with new ideas and applying what I learn to make the game more polished and engaging.
+
+Additional updates and improvements may be added to this repository in the future.
